@@ -26,7 +26,7 @@
 .hero-social a:hover{color:#859d39;transform:translateY(-3px)}
 .hero-meta>span:nth-child(2){margin-left:20px}
 @media(max-width:800px){.hero{height:min(760px,calc(100svh - 70px));min-height:610px;padding:0 6%}.hero-copy{left:6%;top:49%;width:220px}.hero-copy .eyebrow{font-size:7px}.hero-description{font-size:13px}.hero-title{top:25%;right:5%;width:47%;font-size:clamp(69px,12vw,105px)}.hero-circle{width:48vw;left:51%;top:55%}.hero-portrait{height:88%;left:51%}.hero-meta{left:6%;right:6%;bottom:5%}}
-@media(max-width:600px){.hero{height:min(790px,calc(100vh - 82px));height:min(790px,calc(100svh - 82px));min-height:0;padding:0 7%;overflow:hidden}.hero-title{top:3%;right:6%;width:auto;align-items:flex-end;font-size:clamp(65px,17vw,103px);line-height:.85;letter-spacing:-.09em}.hero-title>span:nth-child(2){padding-left:0;padding-right:18%}.hero-title>span:nth-child(3){padding-left:0}.hero-circle{width:78vw;max-width:380px;left:50%;top:56%}.hero-portrait{height:67%;max-height:550px;left:51%;bottom:0}.hero-copy{left:7%;top:auto;bottom:18%;width:min(220px,61%)}.hero-copy .eyebrow{font-size:6.5px;letter-spacing:.5px;gap:7px}.hero-description{font-size:12px;line-height:1.5;margin:13px 0 11px}.hero-read-more{font-size:11px;gap:15px}.hero-meta{left:7%;right:7%;bottom:4%;font-size:7px;letter-spacing:.6px}.hero-social{gap:12px}.hero-social a{font-size:17px}.hero-meta>span:nth-child(2){display:none}.hero-meta>span:last-child{font-size:9px}}
+@media(max-width:600px){.hero{height:min(790px,calc(100vh - 82px));height:min(790px,calc(100svh - 82px));min-height:0;padding:0 7%;overflow:hidden}.hero-title{top:3%;right:6%;width:auto;align-items:flex-end;font-size:clamp(65px,17vw,103px);line-height:.85;letter-spacing:-.09em}.hero-title>span:nth-child(2){padding-left:0;padding-right:18%}.hero-title>span:nth-child(3){padding-left:0}.hero-circle{width:78vw;max-width:380px;left:50%;top:56%}.hero-portrait{height:67%;max-height:550px;left:51%;bottom:0}.hero-copy{left:7%;top:auto;bottom:18%;width:min(220px,61%)}.hero-copy .eyebrow{font-size:6.5px;letter-spacing:.5px;gap:7px}.hero-description{font-size:12px;line-height:1.5;margin:13px 0 11px}.hero-read-more{font-size:11px;gap:15px}.hero-meta{left:7%;right:7%;bottom:4%;font-size:7px;letter-spacing:.6px}.hero-social{gap:12px}.hero-social a{font-size:17px}.hero-meta>span:last-child{font-size:9px}}
 
 /* Theme tokens adapted from the supplied light/dark palette */
 :root{color-scheme:light;--background:oklch(1 0 0);--foreground:oklch(.145 0 0);--card:oklch(.995 0 0);--card-foreground:oklch(.145 0 0);--popover:oklch(1 0 0);--popover-foreground:oklch(.145 0 0);--primary:oklch(.205 0 0);--primary-foreground:oklch(.985 0 0);--secondary:oklch(.87 0 0);--secondary-foreground:oklch(.145 0 0);--muted:oklch(.95 0 0);--muted-foreground:oklch(.556 0 0);--accent:oklch(.95 0 0);--accent-foreground:oklch(.205 0 0);--destructive:oklch(.577 .245 27.325);--destructive-foreground:oklch(1 0 0);--border:oklch(.95 0 0);--input:oklch(.97 0 0);--ring:oklch(.708 0 0);--chart-1:oklch(.81 .10 252);--chart-2:oklch(.62 .19 260);--chart-3:oklch(.55 .22 263);--chart-4:oklch(.49 .22 264);--chart-5:oklch(.42 .18 266);--sidebar:oklch(.985 0 0);--sidebar-foreground:oklch(.145 0 0);--sidebar-primary:oklch(.205 0 0);--sidebar-primary-foreground:oklch(.985 0 0);--sidebar-accent:oklch(.97 0 0);--sidebar-accent-foreground:oklch(.205 0 0);--sidebar-border:oklch(.922 0 0);--sidebar-ring:oklch(.708 0 0);--radius:1rem;--paper:var(--background);--ink:var(--foreground);--line:var(--border);--lime:var(--chart-1);--blue:var(--chart-2);--peach:var(--chart-3)}
@@ -198,6 +198,10 @@ html.dark .hero-social,html.dark .hero-social *{color:#fff;}
   }
   .hero-art{overflow:hidden}
   .hero-meta{left:7%;right:7%;bottom:calc(var(--label-center) - 10px - var(--section-pad))}
+  .hero-meta{justify-content:space-between;gap:8px}
+  .hero-social{margin-right:0}
+  .hero-social svg{width:14px;height:14px}
+  .hero-meta>span:last-child{flex-shrink:0;margin-left:0;font-size:clamp(9px,2.8vw,11px);letter-spacing:0;white-space:nowrap}
 }
 
 /* Desktop/tablet: the hero meta row (socials / credit / city) sits vertically centred
@@ -445,6 +449,7 @@ html .hero-copy:hover,html .hero-copy:hover *,
 html .hero-copy:focus-within,html .hero-copy:focus-within *{color:#fff}
 html.dark .hero-copy:hover,html.dark .hero-copy:hover *,
 html.dark .hero-copy:focus-within,html.dark .hero-copy:focus-within *{color:#000}
+
 
 
 
