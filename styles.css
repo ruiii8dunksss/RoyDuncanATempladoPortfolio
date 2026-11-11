@@ -175,9 +175,9 @@ html.dark .mims-preview-stats>span,.dark .mims-preview-chart{background:#28332c;
 .hero-copy .eyebrow{font-weight:600;color:#000}
 .hero-title .title-period{color:#a6bb54}
 .hero-meta{bottom:20px;}
-.hero-social{align-items:center;gap:16px;}
-.hero-social a{display:grid;width:20px;height:20px;min-width:20px;place-items:center;line-height:1;}
-@media(max-width:600px){.hero-meta{bottom:20px}.hero-social{gap:12px}.hero-social a{width:20px;height:20px;min-width:20px}}
+.hero-social{display:flex;flex:0 0 auto;align-items:center;justify-content:flex-start;gap:16px;}
+.hero-social a{display:grid;width:24px;height:24px;min-width:24px;place-items:center;font-size:12px;line-height:1;}
+@media(max-width:600px){.hero-meta{bottom:20px}.hero-social{gap:10px}.hero-social a{width:24px;height:24px;min-width:24px}}
 
 
 /* Mobile only: hero meta row (socials / credit / city) sits just above the first
