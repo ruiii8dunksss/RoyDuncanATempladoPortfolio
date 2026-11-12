@@ -8,6 +8,8 @@
     <link id="favicon" rel="icon" type="image/png" href="assets/favicon-light.png" sizes="32x32" />
     <title>Roy Duncan</title>
     <script>
+      // Preloader style: 'mech' (logo assembles from mechanical panels, hangar doors open) | 'logo2' (liquid fills the RD logo) | 'boot' (terminal boot sequence + counter) | 'logo' (RD logo draws itself)
+      document.documentElement.dataset.preloader = 'mech';
       try { if (localStorage.getItem('portfolio-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (_) {}
       document.documentElement.classList.add('is-loading');
       setTimeout(function () { document.documentElement.classList.remove('is-loading'); }, 9000);
@@ -27,6 +29,83 @@
           <g class="pl-sil"><path pathLength="1" d="M724 156 L680 195 L570 301 L568 301 L532 263 L488 230 L448 209 L416 197 L387 189 L351 183 L324 181 L14 182 L12 648 L32 677 L33 786 L95 870 L147 951 L148 284 L151 282 L248 282 L253 285 L252 590 L349 698 L352 698 L353 696 L353 285 L355 283 L370 285 L409 301 L438 320 L469 349 L494 386 L500 399 L510 434 L512 450 L512 487 L509 510 L502 537 L487 572 L459 613 L416 658 L362 705 L352 716 L406 775 L596 966 L599 967 L597 953 L591 934 L593 930 L688 930 L720 951 L709 938 L601 831 L632 805 L661 777 L692 741 L722 695 L744 647 L755 613 L760 579 L589 746 L585 749 L583 748 L756 570 L762 562 L767 539 L772 499 L773 464 L770 425 L762 379 L754 349 L736 301 L716 261 L687 216 L666 234 L610 289 L616 294 L630 314 L649 352 L661 387 L669 432 L671 483 L668 516 L660 558 L646 599 L622 647 L595 688 L561 731 L531 764 L524 761 L505 743 L490 725 L538 687 L563 661 L578 642 L606 594 L624 539 L629 505 L630 473 L628 445 L623 416 L607 366 L593 338 L578 315 L577 310 L677 209Z"/><path pathLength="1" d="M252 15 L253 100 L313 100 L353 105 L401 117 L449 135 L494 159 L531 185 L567 219 L591 249 L599 262 L618 246 L672 192 L669 185 L643 155 L595 112 L549 81 L493 53 L437 33 L364 17 L311 12 L253 13Z"/></g>
           <g class="pl-acc"><path pathLength="1" d="M508 863 L595 953 L596 950 L591 935 L592 929 L631 927 L623 926 L612 921 L600 920 L584 914 L569 912 L542 892Z"/><path pathLength="1" d="M600 847 L686 928 L644 886Z"/><path pathLength="1" d="M694 721 L692 721 L675 740 L665 747 L635 778 L626 795 L630 794 L662 763Z"/><path pathLength="1" d="M35 644 L31 647 L27 647 L25 651 L37 671Z"/><path pathLength="1" d="M476 597 L450 627 L411 666 L359 713 L360 715 L378 704 L440 658 L475 627 L448 646 L445 644 L446 640 L459 624Z"/><path pathLength="1" d="M752 592 L748 593 L682 661 L628 712 L609 732 L609 734 L676 682 L746 621Z"/><path pathLength="1" d="M140 335 L137 338 L125 339 L123 367 L123 575 L126 716 L132 708 L136 708 L140 711 L141 706 L143 436 L142 354Z"/><path pathLength="1" d="M634 303 L651 337 L663 367 L677 426 L682 422 L683 414 L680 391 L673 363 L661 332 L646 305 L642 301Z"/><path pathLength="1" d="M562 101 L566 107 L570 108 L578 117 L591 125 L604 138 L607 139 L610 137 L601 127 L566 101Z"/><path pathLength="1" d="M331 97 L387 106 L445 122 L497 145 L540 172 L542 172 L545 160 L550 156 L547 152 L523 140 L493 128 L458 117 L381 101Z"/></g>
         </svg>
+      </div>
+      <div class="preloader-mech" aria-hidden="true">
+        <div class="mc-stage">
+          <span class="mc-glow"></span>
+          <span class="mc-c mc-c1"></span><span class="mc-c mc-c2"></span><span class="mc-c mc-c3"></span><span class="mc-c mc-c4"></span>
+          <i class="mc-p" style="clip-path:inset(0.00% 0.00% 83.03% 79.70%);transform-origin:90.0% 8.3%;--x:48;--y:3;--rot:-90;--d:0.20s"></i>
+          <i class="mc-p" style="clip-path:inset(83.03% 0.00% 0.00% 79.70%);transform-origin:90.0% 91.7%;--x:-60;--y:5;--rot:180;--d:0.33s"></i>
+          <i class="mc-p" style="clip-path:inset(83.03% 79.70% 0.00% 0.00%);transform-origin:10.0% 91.7%;--x:-2;--y:65;--rot:180;--d:0.51s"></i>
+          <i class="mc-p" style="clip-path:inset(16.37% 0.00% 66.37% 79.70%);transform-origin:90.0% 25.0%;--x:65;--y:9;--rot:-90;--d:0.53s"></i>
+          <i class="mc-p" style="clip-path:inset(83.03% 19.70% 0.00% 59.70%);transform-origin:70.0% 91.7%;--x:17;--y:-59;--rot:135;--d:0.57s"></i>
+          <i class="mc-p" style="clip-path:inset(66.37% 79.70% 16.37% 0.00%);transform-origin:10.0% 75.0%;--x:-49;--y:-4;--rot:90;--d:0.77s"></i>
+          <i class="mc-p" style="clip-path:inset(0.00% 59.70% 83.03% 19.70%);transform-origin:30.0% 8.3%;--x:20;--y:56;--rot:-180;--d:0.80s"></i>
+          <i class="mc-p" style="clip-path:inset(16.37% 79.70% 66.37% 0.00%);transform-origin:10.0% 25.0%;--x:-7;--y:-54;--rot:180;--d:1.06s"></i>
+          <i class="mc-p" style="clip-path:inset(49.70% 79.70% 33.03% 0.00%);transform-origin:10.0% 58.3%;--x:-18;--y:48;--rot:90;--d:1.12s"></i>
+          <i class="mc-p" style="clip-path:inset(66.37% 19.70% 16.37% 59.70%);transform-origin:70.0% 75.0%;--x:-47;--y:9;--rot:135;--d:1.20s"></i>
+          <i class="mc-p" style="clip-path:inset(0.00% 19.70% 83.03% 59.70%);transform-origin:70.0% 8.3%;--x:-5;--y:53;--rot:135;--d:1.33s"></i>
+          <i class="mc-p" style="clip-path:inset(0.00% 39.70% 83.03% 39.70%);transform-origin:50.0% 8.3%;--x:5;--y:55;--rot:180;--d:1.38s"></i>
+          <i class="mc-p" style="clip-path:inset(66.37% 0.00% 16.37% 79.70%);transform-origin:90.0% 75.0%;--x:-11;--y:-49;--rot:180;--d:1.42s"></i>
+          <i class="mc-p" style="clip-path:inset(33.03% 79.70% 49.70% 0.00%);transform-origin:10.0% 41.7%;--x:-2;--y:48;--rot:-135;--d:1.73s"></i>
+          <i class="mc-p" style="clip-path:inset(16.37% 59.70% 66.37% 19.70%);transform-origin:30.0% 25.0%;--x:66;--y:16;--rot:90;--d:1.68s"></i>
+          <i class="mc-p" style="clip-path:inset(49.70% 0.00% 33.03% 79.70%);transform-origin:90.0% 58.3%;--x:-5;--y:-62;--rot:-90;--d:1.89s"></i>
+          <i class="mc-p" style="clip-path:inset(16.37% 19.70% 66.37% 59.70%);transform-origin:70.0% 25.0%;--x:50;--y:7;--rot:-180;--d:1.86s"></i>
+          <i class="mc-p" style="clip-path:inset(33.03% 59.70% 49.70% 19.70%);transform-origin:30.0% 41.7%;--x:52;--y:-22;--rot:180;--d:2.05s"></i>
+          <i class="mc-p" style="clip-path:inset(16.37% 39.70% 66.37% 39.70%);transform-origin:50.0% 25.0%;--x:8;--y:-69;--rot:-135;--d:2.17s"></i>
+          <i class="mc-p" style="clip-path:inset(49.70% 59.70% 33.03% 19.70%);transform-origin:30.0% 58.3%;--x:-57;--y:16;--rot:135;--d:2.37s"></i>
+          <i class="mc-p" style="clip-path:inset(33.03% 0.00% 49.70% 79.70%);transform-origin:90.0% 41.7%;--x:-5;--y:56;--rot:180;--d:2.44s"></i>
+          <i class="mc-p" style="clip-path:inset(33.03% 19.70% 49.70% 59.70%);transform-origin:70.0% 41.7%;--x:-51;--y:21;--rot:180;--d:2.51s"></i>
+          <i class="mc-p" style="clip-path:inset(33.03% 39.70% 49.70% 39.70%);transform-origin:50.0% 41.7%;--x:-17;--y:-60;--rot:-135;--d:2.50s"></i>
+          <i class="mc-p" style="clip-path:inset(49.70% 19.70% 33.03% 59.70%);transform-origin:70.0% 58.3%;--x:-69;--y:5;--rot:-180;--d:2.60s"></i>
+          <i class="mc-p" style="clip-path:inset(66.37% 39.70% 16.37% 39.70%);transform-origin:50.0% 75.0%;--x:-11;--y:50;--rot:90;--d:2.88s"></i>
+          <i class="mc-p" style="clip-path:inset(49.70% 39.70% 33.03% 39.70%);transform-origin:50.0% 58.3%;--x:15;--y:49;--rot:180;--d:2.92s"></i>
+          <i class="mc-whole"></i>
+          <span class="mc-scan"></span>
+          <div class="mc-meter">
+            <div class="mc-bar" data-count-ms="4200"><i></i></div>
+            <div class="mc-info">
+              <p class="mc-msgs">
+                <span style="--d:.5s">Initializing hardware</span>
+                <span style="--d:1.42s">Assembling components</span>
+                <span style="--d:2.34s">Compiling modules</span>
+                <span style="--d:3.26s">Linking systems</span>
+                <span class="mc-final">System online</span>
+              </p>
+              <p class="mc-pct"><span class="mc-num">0</span>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="mc-seam" aria-hidden="true"></span>
+      <div class="preloader-logo2" aria-hidden="true">
+        <svg class="lg2" viewBox="0 0 785 983" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <mask id="lg2-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="785" height="983"><image href="assets/rd-logo-mask.png" width="785" height="983"/></mask>
+            <linearGradient id="lg2-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8dbbff"/><stop offset=".35" stop-color="#3b82f6"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+          </defs>
+          <g mask="url(#lg2-mask)">
+            <rect class="lg2-ghost" width="785" height="983"/>
+            <g class="lg2-liq lg2-liq-back"><path class="lg2-wave lg2-wave-back" d="M0 22 Q98.12 0 196.25 22 T392.50 22 T588.75 22 T785.00 22 T981.25 22 T1177.50 22 T1373.75 22 T1570.00 22 V1100 H0 Z"/></g>
+            <g class="lg2-liq"><path class="lg2-wave" d="M0 22 Q98.12 0 196.25 22 T392.50 22 T588.75 22 T785.00 22 T981.25 22 T1177.50 22 T1373.75 22 T1570.00 22 V1100 H0 Z"/></g>
+          </g>
+        </svg>
+        <div class="pl-layer lg2-real"><img class="pl-l" src="assets/rd-logo-light-md.png" alt="" /><img class="pl-d" src="assets/rd-logo-dark-md.png" alt="" /></div>
+        <p class="lg2-name">Roy Duncan</p>
+      </div>
+      <div class="preloader-boot" aria-hidden="true">
+        <div class="pb-top"><b>Roy Duncan</b><span>IT Student &middot; Portfolio</span></div>
+        <div class="pb-term">
+          <p class="pb-line" style="--n:24;--d:.5s"><span class="t">&gt; initializing portfolio</span><span class="ok">[ ok ]</span></p>
+          <p class="pb-line" style="--n:16;--d:1.6s"><span class="t">&gt; loading skills</span><span class="ok">[ ok ]</span></p>
+          <p class="pb-line" style="--n:19;--d:2.6s"><span class="t">&gt; mounting projects</span><span class="ok">[ ok ]</span></p>
+          <p class="pb-line" style="--n:25;--d:3.5s"><span class="t">&gt; verifying certificates</span><span class="ok">[ ok ]</span></p>
+          <p class="pb-line pb-last" style="--n:18;--d:4.5s"><span class="t">&gt; welcome, visitor.</span><span class="cur"></span></p>
+        </div>
+        <div class="pb-foot">
+          <div class="pb-count"><span class="pb-num">0</span><span class="pb-pct">%</span></div>
+          <div class="pb-bar"><i></i></div>
+        </div>
       </div>
     </div>
     <header class="site-header">
@@ -56,7 +135,7 @@
           <img class="hero-portrait" src="assets/roy-cutout.png" alt="" />
         </div>
         <h1 class="hero-title"><span>curious</span><span>by</span><span>nature<span class="title-period">.</span></span></h1>
-        <div class="hero-meta"><div class="hero-social"><a href="https://www.facebook.com/dundudunkinz.donut" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.8-.1-1.6-.2-2.4-.2-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V21z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/ruiii_dunksss?vrfl=NXFsZ2VhMnhqNmJO" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.7" cy="6.6" r="1.15" fill="currentColor"/></svg></a><a href="mailto:orabeoni1231@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><span>CEBU CITY, PHILIPPINES</span></div>
+        <div class="hero-meta"><div class="hero-social"><a href="https://www.facebook.com/dundudunkinz.donut" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.8-.1-1.6-.2-2.4-.2-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V21z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/ruiii_dunksss?vrfl=NXFsZ2VhMnhqNmJO" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.7" cy="6.6" r="1.15" fill="currentColor"/></svg></a><a href="mailto:royduncantemplado@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><span>CEBU CITY, PHILIPPINES</span></div>
       </section>
 
       <section class="section about-section" id="about">
@@ -85,15 +164,16 @@
         <div class="cert-layout"><div><h2>Proof of<br /><span>progress.</span></h2><p class="cert-intro">Courses, certificates, and milestones that mark what I’ve learned so far.</p></div>
           <div class="cert-list">
             <article class="cert-row certificate-card"><span class="cert-count">01</span><a class="certificate-image" href="assets/certificates/tesda-nc-ii-computer-systems-servicing.png" target="_blank" rel="noreferrer" aria-label="Open TESDA National Certificate II image"><img src="assets/certificates/tesda-nc-ii-computer-systems-servicing.png" alt="TESDA National Certificate II in Computer Systems Servicing awarded to Roy Duncan A. Templado" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>National Certificate II</h3><p>Computer Systems Servicing · TESDA</p></div><a class="cert-link" href="assets/certificates/tesda-nc-ii-computer-systems-servicing.png" target="_blank" rel="noreferrer" aria-label="View National Certificate II">↗</a></article>
-            <article class="cert-row certificate-card"><span class="cert-count">02</span><a class="certificate-image" href="assets/certificates/talisay-css-nc-ii-participation.jpg" target="_blank" rel="noreferrer" aria-label="Open Computer System Servicing NC II participation certificate image"><img src="assets/certificates/talisay-css-nc-ii-preview.jpg" alt="Certificate of participation for Empowering Skills in Computer System Servicing NC II, held at Talisay City College on March 23, 2025" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>Empowering Skills in Computer System Servicing NC II</h3><p>Participation · Talisay City College · March 23, 2025</p></div><a class="cert-link" href="assets/certificates/talisay-css-nc-ii-participation.jpg" target="_blank" rel="noreferrer" aria-label="View Computer System Servicing NC II participation certificate">↗</a></article>
-            <article class="cert-row certificate-card"><span class="cert-count">03</span><a class="certificate-image" href="assets/certificates/talisay-load-balancing-participation.jpg" target="_blank" rel="noreferrer" aria-label="Open load balancing participation certificate image"><img src="assets/certificates/talisay-load-balancing-preview.jpg" alt="Certificate of participation for Mastering Load Balancing: Strategies for Scalable, Resilient, and High-Performance System, held at Talisay City College on March 16, 2025" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>Mastering Load Balancing: Strategies for Scalable, Resilient, and High-Performance System</h3><p>Participation · Talisay City College · March 16, 2025</p></div><a class="cert-link" href="assets/certificates/talisay-load-balancing-participation.jpg" target="_blank" rel="noreferrer" aria-label="View load balancing participation certificate">↗</a></article>
+            <article class="cert-row certificate-card"><span class="cert-count">02</span><a class="certificate-image" href="assets/certificates/jco-cloud-based-web-development-appreciation.jpg" target="_blank" rel="noreferrer" aria-label="Open Cloud-Based Web Development certificate of appreciation image"><img src="assets/certificates/jco-cloud-based-web-development-appreciation.jpg" width="784" height="556" alt="Certificate of Appreciation awarded to Roy Duncan Templado for active participation in the Junior Computer Organization domain enhancement program, Cloud-Based Web Development: An Enhancement Program for ICT Students, held on October 11, 2026 at Tabunok City Hall, Talisay City, Cebu" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>Cloud-Based Web Development: An Enhancement Program for ICT Students</h3><p>Appreciation · Junior Computer Organization · October 11, 2026</p></div><a class="cert-link" href="assets/certificates/jco-cloud-based-web-development-appreciation.jpg" target="_blank" rel="noreferrer" aria-label="View Cloud-Based Web Development certificate of appreciation">↗</a></article>
+            <article class="cert-row certificate-card"><span class="cert-count">03</span><a class="certificate-image" href="assets/certificates/talisay-css-nc-ii-participation.jpg" target="_blank" rel="noreferrer" aria-label="Open Computer System Servicing NC II participation certificate image"><img src="assets/certificates/talisay-css-nc-ii-preview.jpg" alt="Certificate of participation for Empowering Skills in Computer System Servicing NC II, held at Talisay City College on March 23, 2025" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>Empowering Skills in Computer System Servicing NC II</h3><p>Participation · Talisay City College · March 23, 2025</p></div><a class="cert-link" href="assets/certificates/talisay-css-nc-ii-participation.jpg" target="_blank" rel="noreferrer" aria-label="View Computer System Servicing NC II participation certificate">↗</a></article>
+            <article class="cert-row certificate-card"><span class="cert-count">04</span><a class="certificate-image" href="assets/certificates/talisay-load-balancing-participation.jpg" target="_blank" rel="noreferrer" aria-label="Open load balancing participation certificate image"><img src="assets/certificates/talisay-load-balancing-preview.jpg" alt="Certificate of participation for Mastering Load Balancing: Strategies for Scalable, Resilient, and High-Performance System, held at Talisay City College on March 16, 2025" loading="lazy" decoding="async" /></a><div class="certificate-info"><h3>Mastering Load Balancing: Strategies for Scalable, Resilient, and High-Performance System</h3><p>Participation · Talisay City College · March 16, 2025</p></div><a class="cert-link" href="assets/certificates/talisay-load-balancing-participation.jpg" target="_blank" rel="noreferrer" aria-label="View load balancing participation certificate">↗</a></article>
           </div>
         </div>
       </section>
 
       <section class="section projects-section" id="projects">
         <div class="section-heading"><p class="eyebrow">04 / SELECTED WORK</p><span class="section-aside">SMALL STEPS. REAL PROJECTS.</span></div>
-        <div class="projects-title"><h2>Things I’ve<br /><span>put together.</span></h2><p>Class projects and ideas that made me dive deeper to programming.</p></div>
+        <div class="projects-title"><h2>Things I’ve<br /><span>put together.</span></h2><p>Class projects and ideas that made me dive deeper into technology and design.</p></div>
         <div class="project-grid">
           <article class="project-card project-one"><div class="project-visual shot-visual"><span class="visual-label">FIRST WEB PROJECT</span><a href="projects/empathy-webdev/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open the Phantom Assassin guide project"><img src="assets/projects/phantom-assassin-guide-preview.webp" alt="Screenshot of the Phantom Assassin guide showing the hero header, skill cards and recommended item builds" loading="lazy" decoding="async" /></a></div><div class="project-details"><div><span class="project-type">CLASS PROJECT · OCTOBER 2025</span><h3>Empathy — Phantom Assassin Guide</h3><p>A Dota 2 hero guide featuring Phantom Assassin’s skills, recommended item builds, and pro-player builds.</p><p class="project-origin">My first web development project, built by hand in HTML and CSS in VS Code using lessons from my professor, without AI-generated code.</p></div><a class="round-link" href="projects/empathy-webdev/index.html" target="_blank" rel="noopener noreferrer" aria-label="View the Phantom Assassin guide project">↗</a></div><div class="project-tech"><span>HTML</span><span>CSS</span><span>Visual Studio Code</span></div></article>
           <article class="project-card project-two"><div class="project-visual shot-visual"><span class="visual-label">BANKING ADMIN CONSOLE</span><a href="https://orabank.gt.tc" target="_blank" rel="noopener noreferrer" aria-label="Open the OraBank live project"><img src="assets/projects/orabank-dashboard-preview.webp" alt="OraBank admin dashboard showing total users, assets under management, a transfer form and transaction summaries" loading="lazy" decoding="async" /></a></div><div class="project-details"><div><span class="project-type">FULL-STACK WEB APP · JULY 2026</span><h3>OraBank — Banking Admin Console</h3><p>A banking web app with admin and user dashboards, account management, and transaction flows.</p><p class="project-origin">My second project and the first time learning PHP. I explored backend development with help from Claude and GitHub Copilot, then hosted it on InfinityFree.</p></div><a class="round-link" href="https://orabank.gt.tc" target="_blank" rel="noopener noreferrer" aria-label="Open the OraBank live project">↗</a></div><div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>SQL</span><span>InfinityFree</span></div></article>
@@ -109,20 +189,39 @@
   </div>
   <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap 5</span><span>PHP 8.1+</span><span>MySQL / MariaDB</span><span>PDO</span><span>Chart.js</span><span>XAMPP</span><span>Claude Code</span></div>
 </article>
+          <article class="project-card project-four">
+  <div class="project-visual shot-visual"><span class="visual-label">AUTOCAD DRAWINGS</span><a href="assets/projects/cad/drawing-1.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the first AutoCAD drawing full size"><img src="assets/projects/cad/drawing-1.webp" width="1800" height="1444" alt="AutoCAD 2D practice drawing of a plate with a central ring and two side lugs, with diameter, radius and linear dimensions" loading="lazy" decoding="async" /></a></div><div class="project-details">
+    <div>
+      <span class="project-type">CLASS PRACTICE · AUTOCAD</span>
+      <h3>AutoCAD — 2D Practice Drawings</h3>
+      <p>Dimensioned 2D drawings made in AutoCAD, with centerlines, tangent arcs, and diameter, radius, linear, and angular dimensions.</p>
+      <p class="project-origin">Practice work from my Bachelor of Industrial Technology course, building drafting skills in geometry, layers, and dimensioning. Tap the arrow or the drawing above to browse all five.</p>
+    </div>
+    <a class="round-link" href="assets/projects/cad/drawing-1.webp" target="_blank" rel="noopener noreferrer" aria-label="View all AutoCAD drawings">↗</a>
+  </div>
+  <div class="cad-thumbs" hidden>
+    <a href="assets/projects/cad/drawing-1.webp" target="_blank" rel="noopener noreferrer" aria-label="Open AutoCAD drawing 1 full size"><img src="assets/projects/cad/drawing-1-thumb.webp" width="420" height="337" alt="AutoCAD drawing 1: plate with a central ring and two side lugs" loading="lazy" decoding="async" /></a>
+    <a href="assets/projects/cad/drawing-2.webp" target="_blank" rel="noopener noreferrer" aria-label="Open AutoCAD drawing 2 full size"><img src="assets/projects/cad/drawing-2-thumb.webp" width="420" height="302" alt="AutoCAD drawing 2: curved plate with a large center circle and bolt-hole lugs" loading="lazy" decoding="async" /></a>
+    <a href="assets/projects/cad/drawing-3.webp" target="_blank" rel="noopener noreferrer" aria-label="Open AutoCAD drawing 3 full size"><img src="assets/projects/cad/drawing-3-thumb.webp" width="420" height="391" alt="AutoCAD drawing 3: rounded plate with a hub and two lower lobes" loading="lazy" decoding="async" /></a>
+    <a href="assets/projects/cad/drawing-4.webp" target="_blank" rel="noopener noreferrer" aria-label="Open AutoCAD drawing 4 full size"><img src="assets/projects/cad/drawing-4-thumb.webp" width="361" height="420" alt="AutoCAD drawing 4: square flange with four bolt holes and radial slots" loading="lazy" decoding="async" /></a>
+    <a href="assets/projects/cad/drawing-5.webp" target="_blank" rel="noopener noreferrer" aria-label="Open AutoCAD drawing 5 full size"><img src="assets/projects/cad/drawing-5-thumb.webp" width="420" height="362" alt="AutoCAD drawing 5: curved arm with a slotted end and a round end" loading="lazy" decoding="async" /></a>
+  </div>
+  <div class="project-tech"><span>AutoCAD</span><span>2D Drafting</span><span>Dimensioning</span></div>
+</article>
         </div>
         <p class="projects-note">MORE IDEAS ARE TAKING SHAPE <span>✳</span></p>
       </section>
 
       <section class="contact-section" id="contact">
         <div class="contact-top"><p class="eyebrow">05 / YOUR TURN</p><span>HAVE A QUESTION, IDEA, OR OPPORTUNITY?</span></div>
-        <div class="contact-content"><h2>Let’s make<br />something <span>good.</span></h2><a class="button button-lime" href="mailto:orabeoni1231@gmail.com">Say hello <span aria-hidden="true">↗</span></a></div>
-        <div class="contact-bottom"><p>Happy to chat about projects, learning, or what’s next.</p><a href="mailto:orabeoni1231@gmail.com">orabeoni1231@gmail.com</a></div>
+        <div class="contact-content"><h2>Let’s make<br />something <span>good.</span></h2><a class="button button-lime" href="mailto:royduncantemplado@gmail.com">Say hello <span aria-hidden="true">↗</span></a></div>
+        <div class="contact-bottom"><p>Happy to chat about projects, learning, or what’s next.</p><a href="mailto:royduncantemplado@gmail.com">royduncantemplado@gmail.com</a></div>
       </section>
     </main>
     <footer class="site-footer">
       <a class="wordmark footer-mark" href="#home" aria-label="Roy Duncan portfolio home"><span class="rd-logo" aria-hidden="true"><img class="rd-logo-light" src="assets/rd-logo-light-sm.png" alt="" /><img class="rd-logo-dark" src="assets/rd-logo-dark-sm.png" alt="" /></span></a>
       <p>BUILT WITH CURIOSITY <span>✳</span> © <span id="year">2026</span> ROY DUNCAN</p>
-      <div class="social-links"><a href="https://www.facebook.com/dundudunkinz.donut" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.instagram.com/ruiii_dunksss?vrfl=NXFsZ2VhMnhqNmJO" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="mailto:orabeoni1231@gmail.com">Email ↗</a></div>
+      <div class="social-links"><a href="https://www.facebook.com/dundudunkinz.donut" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.instagram.com/ruiii_dunksss?vrfl=NXFsZ2VhMnhqNmJO" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="mailto:royduncantemplado@gmail.com">Email ↗</a></div>
       <a class="back-top" href="#home">BACK TO TOP ↑</a>
     </footer>
   </body>

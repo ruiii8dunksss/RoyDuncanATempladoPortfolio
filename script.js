@@ -1,16 +1,38 @@
-// ----- Preloader (RD logo) -----
+// ----- Preloader (4 styles: 'mech', 'logo2', 'boot', 'logo' — switch in the <head> of index.html) -----
 const preloader = document.querySelector('.preloader');
 const preloaderReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const preloaderDone = new Promise((resolve) => {
   const root = document.documentElement;
   if (!preloader) { root.classList.remove('is-loading'); resolve(); return; }
   const startedAt = performance.now();
-  const MIN_VISIBLE = preloaderReduceMotion ? 350 : 5600; // let the logo animation play out
+  const MIN_VISIBLE = preloaderReduceMotion ? 350 : 5600; // let the animation play out (same for both styles)
   const MAX_VISIBLE = 8000;                                // never keep people waiting
   let finished = false;
+
+  // 'boot' and 'mech' styles: 0 -> 100% counter + progress bar, in step with the animation
+  const progressNums = preloader.querySelectorAll('.pb-num, .mc-num');
+  const progressBars = preloader.querySelectorAll('.pb-bar i, .mc-bar i');
+  const setProgress = (p) => {
+    progressNums.forEach((el) => { el.textContent = Math.round(p * 100); });
+    progressBars.forEach((el) => { el.style.transform = 'scaleX(' + p + ')'; });
+  };
+  if (progressNums.length && !preloaderReduceMotion) {
+    // 'mech' reaches 100% when the logo locks together (see .mc-bar data-count-ms); 'boot' just before the curtain closes
+    const COUNT_MS = root.dataset.preloader === 'mech' ? 4200 : MIN_VISIBLE - 400;
+    const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const tick = (now) => {
+      if (finished) return;
+      const t = Math.min(1, (now - startedAt) / COUNT_MS);
+      setProgress(ease(t));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  } else setProgress(1);
+
   const finish = () => {
     if (finished) return;
     finished = true;
+    setProgress(1);
     preloader.classList.add('is-done');
     preloader.setAttribute('aria-hidden', 'true');
     root.classList.remove('is-loading');
@@ -85,3 +107,86 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
   // start revealing the page only once the preloader has lifted
   preloaderDone.then(() => revealTargets.forEach((element) => revealObserver.observe(element)));
 }
+
+// ----- AutoCAD drawings lightbox: arrow, main image and thumbnails open a viewer for all drawings -----
+(() => {
+  const card = document.querySelector('.project-four');
+  if (!card) return;
+  const thumbs = [...card.querySelectorAll('.cad-thumbs a')];
+  if (!thumbs.length) return;
+  const items = thumbs.map((a) => ({ src: a.getAttribute('href'), alt: a.querySelector('img').alt }));
+
+  const box = document.createElement('div');
+  box.className = 'cad-lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'AutoCAD drawings viewer');
+  box.hidden = true;
+  box.innerHTML =
+    '<button type="button" class="cad-lb-btn cad-lb-close" aria-label="Close viewer">×</button>' +
+    '<button type="button" class="cad-lb-btn cad-lb-prev" aria-label="Previous drawing">←</button>' +
+    '<figure class="cad-lb-figure"><img alt="" /><figcaption></figcaption></figure>' +
+    '<button type="button" class="cad-lb-btn cad-lb-next" aria-label="Next drawing">→</button>';
+  document.body.appendChild(box);
+
+  const img = box.querySelector('img');
+  const caption = box.querySelector('figcaption');
+  const closeBtn = box.querySelector('.cad-lb-close');
+  const buttons = [...box.querySelectorAll('button')];
+  let index = 0;
+  let lastFocus = null;
+
+  const show = (i) => {
+    index = (i + items.length) % items.length;
+    img.src = items[index].src;
+    img.alt = items[index].alt;
+    caption.textContent = `${String(index + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')} — ${items[index].alt.replace(/^AutoCAD drawing \d+:\s*/i, '')}`;
+  };
+  const open = (i) => {
+    lastFocus = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+  const close = () => {
+    box.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+
+  card.querySelectorAll('a[target="_blank"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return; // let people open in a new tab if they want to
+      e.preventDefault();
+      const t = thumbs.indexOf(a);
+      open(t === -1 ? 0 : t);
+    });
+  });
+
+  box.querySelector('.cad-lb-prev').addEventListener('click', () => show(index - 1));
+  box.querySelector('.cad-lb-next').addEventListener('click', () => show(index + 1));
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', (e) => { if (e.target === box) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(index - 1);
+    else if (e.key === 'ArrowRight') show(index + 1);
+    else if (e.key === 'Tab') {
+      const first = buttons[0], last = buttons[buttons.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // swipe on touch screens
+  let startX = null;
+  box.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, { passive: true });
+})();
