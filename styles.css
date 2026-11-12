@@ -43,7 +43,7 @@ body{background:var(--background);color:var(--foreground);transition:background-
 .about-section,.cert-section{background:var(--background)}.skills-section,.projects-section{background:var(--muted)}
 .section-heading,.skill-groups,.skill-group,.cert-list,.cert-row{border-color:var(--border)}
 .section-mark,.wordmark span,.desktop-nav a:hover,.social-links a:hover,.about-grid h2 span,.skills-intro h2 span,.cert-layout h2 span,.projects-title h2 span,.text-link,.cert-link,.skill-symbol,.hero-read-more:hover,.projects-note span{color:var(--chart-2)}
-.wordmark{display:inline-flex;align-items:center;line-height:0}.rd-logo{position:relative;display:inline-block;width:42px;height:53px;flex:0 0 auto;overflow:visible;transition:transform .2s}.rd-logo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}.rd-logo-dark{display:none!important}html.dark .rd-logo-light{display:none!important}html.dark .rd-logo-dark{display:block!important}.wordmark:hover .rd-logo{transform:translateY(-2px)}.footer-mark .rd-logo{width:34px;height:43px}
+.wordmark{display:inline-flex;align-items:center;line-height:0}.rd-logo{position:relative;display:inline-block;width:36px;height:45px;flex:0 0 auto;overflow:visible;transition:transform .2s}.rd-logo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}.rd-logo-dark{display:none!important}html.dark .rd-logo-light{display:none!important}html.dark .rd-logo-dark{display:block!important}.wordmark:hover .rd-logo{transform:translateY(-2px)}.footer-mark .rd-logo{width:34px;height:43px}
 .skill-group{grid-template-columns:minmax(260px,.42fr) minmax(0,1fr)}.skill-group-head{display:grid;grid-template-columns:28px minmax(0,1fr) 36px;align-items:center;gap:0;width:100%}.skill-group-head>h3{grid-column:2;margin:0}.skill-group-head>.skill-symbol{grid-column:3;justify-self:center}
 @media(min-width:601px){.skill-tags{padding-left:78px}.skill-group-head>.skill-symbol{transform:translateX(-8px)}}
 @media(max-width:600px){.skill-group{grid-template-columns:minmax(0,1fr);gap:12px}.skill-group-head{grid-template-columns:28px minmax(0,1fr) 36px}.skill-group-head>.skill-symbol{transform:none}.skill-tags{width:100%;padding-left:28px;gap:6px}}
@@ -621,3 +621,61 @@ html.dark .hero-copy:focus-within,html.dark .hero-copy:focus-within *{color:#000
 
 /* Match the arrow placement of the first two project cards: vertically centered beside the text */
 .project-three .project-details,.project-four .project-details{align-items:center;gap:14px}
+
+
+/* ===== Resume buttons + preview ===== */
+.resume-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin-top:16px}
+.resume-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border:1px solid var(--foreground);border-radius:999px;background:transparent;color:var(--foreground);font:600 12px var(--sans);cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.resume-btn:hover,.resume-btn:focus-visible{background:var(--foreground);color:var(--background);transform:translateY(-2px)}
+.resume-btn-primary{background:var(--foreground);color:var(--background)}
+.resume-btn-primary:hover,.resume-btn-primary:focus-visible{background:var(--chart-2);border-color:var(--chart-2);color:#fff}
+.contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+.button-ghost{background:transparent;border-color:color-mix(in srgb,var(--primary-foreground) 45%,transparent);color:var(--primary-foreground)}
+.button-ghost:hover{background:var(--primary-foreground);color:var(--primary);border-color:var(--primary-foreground)}
+.resume-preview-link{background:none;border:0;padding:0 0 3px;color:inherit;font:600 12px var(--sans);cursor:pointer;border-bottom:1px solid currentColor;opacity:.85}
+.resume-preview-link:hover{opacity:1;color:var(--chart-1)}
+.resume-modal{position:fixed;inset:0;z-index:2100;display:flex;flex-direction:column;background:rgba(12,12,12,.92);backdrop-filter:blur(4px)}
+.resume-modal[hidden]{display:none}
+.resume-modal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;color:#f4f2ec}
+.resume-modal-bar>span{font:9px/1.4 var(--mono);letter-spacing:1.25px}
+.resume-modal-bar>div{display:flex;align-items:center;gap:12px}
+.resume-modal .resume-btn{border-color:#f4f2ec;color:#f4f2ec}
+.resume-modal .resume-btn-primary{background:var(--lime);border-color:var(--lime);color:#10110f}
+.resume-modal .resume-btn-primary:hover{background:#e0ff78;border-color:#e0ff78;color:#10110f}
+.resume-close{width:36px;height:36px;border:1px solid #f4f2ec;border-radius:50%;background:transparent;color:#f4f2ec;font-size:22px;line-height:1;cursor:pointer;transition:background .2s,color .2s}
+.resume-close:hover,.resume-close:focus-visible{background:var(--lime);border-color:var(--lime);color:#10110f}
+.resume-modal-body{flex:1;overflow:auto;padding:4px 20px 28px;display:flex;justify-content:center;align-items:flex-start}
+.resume-modal-body img{display:block;width:min(100%,820px);height:auto;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+@media(max-width:600px){.resume-modal-bar{padding:10px 12px}.resume-modal-bar>span{display:none}.resume-modal-bar{justify-content:flex-end}.resume-modal-body{padding:4px 8px 20px}.contact-actions{gap:12px}.contact-actions .button{flex:1 1 100%}}
+
+/* Hero resume button: outlined, readable in light + dark */
+.hero-copy .resume-btn{background:transparent;border-color:var(--foreground);color:var(--foreground)}
+.hero-copy .resume-btn:hover,.hero-copy .resume-btn:focus-visible{background:var(--foreground);color:var(--background)}
+html.dark .hero-copy .resume-btn,html.dark .hero-copy .resume-btn *{color:var(--foreground)}
+html.dark .hero-copy .resume-btn:hover,html.dark .hero-copy .resume-btn:hover *,html.dark .hero-copy .resume-btn:focus-visible,html.dark .hero-copy .resume-btn:focus-visible *{color:var(--background)}
+/* Resume actions inside the contact bottom row */
+.contact-bottom{align-items:center;gap:16px}
+.contact-bottom .contact-actions{gap:18px}
+.contact-bottom .button-ghost{height:38px;padding:0 16px}
+html:not(.dark) .contact-bottom .button-ghost,html.dark .contact-bottom .button-ghost{color:var(--primary-foreground)}
+@media(max-width:600px){.contact-bottom{align-items:flex-start}.contact-bottom .contact-actions .button{flex:0 0 auto}}
+
+/* Contact footer: resume links sit above the gridline, email below it.
+   Gap above the line = gap below the line (19px). */
+.contact-section .contact-bottom{display:block;border-top:0;padding-top:0}
+.contact-section .contact-bottom .contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px;padding-bottom:19px}
+.contact-section .contact-bottom .contact-actions .resume-link,
+.contact-section .contact-bottom .contact-actions .resume-preview-link{display:inline-flex;align-items:center;gap:8px;height:auto;padding:0;border:0;border-radius:0;background:none;box-shadow:none;transform:none;font:600 12px var(--sans);color:var(--primary-foreground);opacity:1;cursor:pointer;text-decoration:none;transition:color .2s}
+.contact-section .contact-bottom .contact-actions .resume-link:hover,
+.contact-section .contact-bottom .contact-actions .resume-preview-link:hover{color:var(--chart-1)}
+.contact-mail-row{border-top:1px solid color-mix(in srgb,var(--primary-foreground) 24%,transparent);padding-top:19px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.contact-mail-row p{margin:0}
+@media(max-width:600px){.contact-mail-row{flex-direction:column;align-items:flex-start;gap:26px}.contact-mail-row a{align-self:flex-end;text-align:right}}
+
+/* Hero: Resume sits on the right edge, same link + animation as "More about me" */
+.hero-links{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.hero-links .hero-read-more{margin:0}
+/* Contact footer: resume links aligned to the right */
+.contact-section .contact-bottom .contact-actions{justify-content:flex-end}
+.rd-logo img{image-rendering:auto;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+@media(max-width:600px){.site-header .rd-logo{width:28px;height:35px}}

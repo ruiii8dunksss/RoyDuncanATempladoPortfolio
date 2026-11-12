@@ -190,3 +190,28 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
     startX = null;
   }, { passive: true });
 })();
+
+
+// ----- Resume preview -----
+(() => {
+  const modal = document.getElementById('resume-modal');
+  if (!modal) return;
+  const openers = document.querySelectorAll('[data-resume-open]');
+  const closeBtn = modal.querySelector('.resume-close');
+  let lastFocus = null;
+  const open = () => {
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+  const close = () => {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
+  openers.forEach((b) => b.addEventListener('click', open));
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal || e.target.classList.contains('resume-modal-body')) close(); });
+  document.addEventListener('keydown', (e) => { if (!modal.hidden && e.key === 'Escape') close(); });
+})();
